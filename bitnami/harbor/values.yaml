@@ -2830,6 +2830,15 @@ trivy:
   ## `/home/scanner/.cache/trivy/db/trivy.db` path.
   ##
   skipUpdate: false
+  ## @param trivy.skipJavaDBUpdate The flag to disable Trivy Java DB downloads.
+  ## If the value is set to `true` you have to manually download the `trivy-java.db` file and mount it in the
+  ## `cacheDir` path.
+  ##
+  skipJavaDBUpdate: false
+  ## @param trivy.offlineScan The flag to prevent Trivy from sending API requests to identify dependencies.
+  ## This option does not affect DB download. You need to specify skipUpdate as wall as offlinesScan in an air-gapped environment.
+  ##
+  offlineScan: false
   ## @param trivy.cacheDir Directory to store the cache
   ##
   cacheDir: "/bitnami/harbor-adapter-trivy/.cache"
